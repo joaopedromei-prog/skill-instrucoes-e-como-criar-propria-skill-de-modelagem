@@ -1,0 +1,671 @@
+{
+  "_schema": {
+    "como_funciona": "Fonte da verdade dos templates renderizados por código (render.py). Mantém o mesmo texto/qualidade dos glossários.",
+    "campos": {
+      "triggers": "frases do João que ativam o template (para detecção)",
+      "slots": "variáveis: default + values aceitos; as_text opcional mapeia valor -> fragmento de texto",
+      "text": "texto canônico com {slot} (e {video_refs}/{anti_refs} do exemplo). Começa com emoji padrão.",
+      "text_by": "alternativa ao text: escolhe o texto por um slot (map por valor)",
+      "example": "by_slot+map -> tag por valor, ou tag fixa; resolve imagem/vídeo no manifest",
+      "secao": "edicao | gravacao",
+      "obrigatorio": "marca itens do checklist obrigatório"
+    },
+    "nota": "Cada texto começa com um emoji padrão por tipo. Refs de vídeo são anexadas pelo render numa nova linha com 🔗.",
+    "mutex": "Templates que se SOBREPÕEM — emita só UM (o mais específico) e absorva o detalhe do outro: [ritmo-tiktok-viral | criativo-atropelado] (escolha 1 de ritmo); caixinha-de-perguntas cobre o formato CXP (não emita formato=CXP + caixinha juntos); [takes-dopaminergicos ~ corte-seco ~ ritmo] descrevem cadência parecida — combine numa só quando o copy não distinguir."
+  },
+  "templates": {
+    "legenda-minimalista": {
+      "secao": "edicao",
+      "obrigatorio": "legenda",
+      "triggers": [
+        "legenda minimalista",
+        "legenda mínima",
+        "legenda limpa",
+        "legenda simples",
+        "legenda dinâmica",
+        "legendas dinâmicas",
+        "legenda (default)"
+      ],
+      "slots": {
+        "cor": {
+          "default": "branca",
+          "values": [
+            "branca"
+          ]
+        }
+      },
+      "text": "📝 Legenda minimalista — limpa, sem competir com a imagem: fonte TikTok Sans / Instagram Sans, {cor} com borda fina preta, sem caixa/fundo e sem animação (aparece e some seca).",
+      "example": {
+        "by_slot": "cor",
+        "map": {
+          "branca": "legenda-min-branca"
+        },
+        "default_tag": "legenda-min-branca"
+      }
+    },
+    "legenda-leia-a-legenda": {
+      "secao": "edicao",
+      "triggers": [
+        "leia a legenda",
+        "leia a descrição",
+        "manda ler a legenda"
+      ],
+      "slots": {
+        "cor": {
+          "default": "preta-fundo-branco",
+          "values": [
+            "preta-fundo-branco",
+            "branca-fundo-preto"
+          ],
+          "as_text": {
+            "preta-fundo-branco": "letra preta sobre fundo branco",
+            "branca-fundo-preto": "letra branca sobre fundo preto"
+          }
+        },
+        "momento": {
+          "default": "no meio do criativo",
+          "values": [
+            "no meio do criativo",
+            "no início",
+            "no fim"
+          ]
+        }
+      },
+      "text": "📝 Card \"Leia a legenda 👇\" pra empurrar o usuário pra descrição: fonte TikTok Sans / Instagram Sans, {cor}, em pílula arredondada. Entra {momento}, um pouco abaixo do meio (não lá no rodapé). Fica 2–3s e some.",
+      "example": {
+        "by_slot": "cor",
+        "map": {
+          "preta-fundo-branco": "leia-legenda-preta",
+          "branca-fundo-preto": "leia-legenda-branca"
+        }
+      }
+    },
+    "legenda-interativa-tipografia": {
+      "secao": "edicao",
+      "triggers": [
+        "legenda interativa",
+        "legendas interativas",
+        "tipografia",
+        "tipografias",
+        "legenda com tipografia",
+        "palavras-chave em destaque",
+        "palavra-chave em destaque",
+        "estilo Isadora Nogueira"
+      ],
+      "slots": {},
+      "text": "📝 Legenda interativa/tipográfica — tela com movimento que prende o olho: tamanhos, fontes, cores e posições variando ao longo do criativo, cada palavra-chave com estilo próprio, no ritmo da fala. Destacar as palavras de impacto. NÃO é a legenda minimalista fixa.",
+      "example": {
+        "tag": "legenda-interativa-tipografia"
+      }
+    },
+    "headline-invideo": {
+      "secao": "edicao",
+      "triggers": [
+        "headline invídeo",
+        "headline ancorada",
+        "ancorar headline",
+        "headline simples",
+        "texto na tela",
+        "título na tela"
+      ],
+      "slots": {
+        "estilo": {
+          "default": "letra-branca-borda-preta",
+          "values": [
+            "letra-branca-borda-preta",
+            "fundo-branco-letra-preta",
+            "fundo-vermelho-letra-branca"
+          ]
+        }
+      },
+      "text_by": {
+        "slot": "estilo",
+        "map": {
+          "letra-branca-borda-preta": "🔤 Headline invídeo pra fixar a mensagem na tela: fonte TikTok Sans, letra branca com borda preta, sem fundo. Ancorar nos pontos de ênfase, entrando junto com a fala (quando a copy pedir, escrita e narrada ao mesmo tempo). Centralizada, terço superior.",
+          "fundo-branco-letra-preta": "🔤 Headline invídeo pra fixar a mensagem na tela: fonte TikTok Sans, em pílula/fundo branco com letra preta. Ancorar nos pontos de ênfase, entrando junto com a fala. Centralizada, terço superior.",
+          "fundo-vermelho-letra-branca": "🔤 Headline invídeo pra frases de choque: fonte TikTok Sans, fundo vermelho com letra branca. Ancorar nos pontos de ênfase, entrando junto com a fala. Centralizada, terço superior."
+        }
+      },
+      "example": {
+        "by_slot": "estilo",
+        "map": {
+          "letra-branca-borda-preta": "headline-invideo-letra-branca",
+          "fundo-branco-letra-preta": "headline-invideo-fundo-branco",
+          "fundo-vermelho-letra-branca": "headline-invideo-fundo-vermelho"
+        }
+      }
+    },
+    "musica-de-fundo": {
+      "secao": "edicao",
+      "triggers": [
+        "música",
+        "música de fundo",
+        "trilha",
+        "som de fundo",
+        "sem música"
+      ],
+      "slots": {
+        "usar": {
+          "default": "sim",
+          "values": [
+            "sim",
+            "não"
+          ]
+        },
+        "energia": {
+          "default": "média-alta",
+          "values": [
+            "média-alta",
+            "baixa",
+            "alta"
+          ]
+        }
+      },
+      "text_by": {
+        "slot": "usar",
+        "map": {
+          "sim": "🎵 Música de fundo pra dar energia sem atrapalhar a fala: casando com o tema e o ritmo, energia {energia}, volume baixo SEMPRE abaixo da voz. Baixar/cortar a trilha nos momentos de ênfase.",
+          "não": "🎵 Sem música — só a voz/áudio original."
+        }
+      },
+      "example": {}
+    },
+    "ritmo-tiktok-viral": {
+      "secao": "edicao",
+      "obrigatorio": "ritmo",
+      "triggers": [
+        "ritmo de TikTok viral",
+        "ritmo viral",
+        "rápido e dinâmico",
+        "acelerar o vídeo",
+        "manter o ritmo"
+      ],
+      "slots": {
+        "aceleracao": {
+          "default": "leve (1.1–1.2x)",
+          "values": [
+            "leve (1.1–1.2x)",
+            "sem aceleração"
+          ]
+        }
+      },
+      "text": "⚡ Ritmo de TikTok viral — o criativo não pode ter 1 segundo morto, ele anda: cortes rápidos emendando uma frase na outra, sem silêncios, aceleração {aceleracao} no geral (cortar respiros e pausas mortas).",
+      "example": {
+        "tag": "ritmo-viral-ref"
+      }
+    },
+    "corte-seco": {
+      "secao": "edicao",
+      "triggers": [
+        "corte seco",
+        "cortes secos",
+        "cortes dinâmicos"
+      ],
+      "slots": {},
+      "text": "✂️ Cortes secos pra manter a energia: troca direta de take, sem transição nem efeito (sem fade, sem zoom). Cada corte cai no ritmo da fala; em sequência de exemplos, 1 corte por exemplo (~1s cada).",
+      "example": {
+        "tag": "corte-seco-ref"
+      }
+    },
+    "criativo-atropelado": {
+      "secao": "edicao",
+      "obrigatorio": "ritmo",
+      "triggers": [
+        "criativo atropelado",
+        "atropelado",
+        "deixa atropelado",
+        "atropela o criativo"
+      ],
+      "slots": {
+        "velocidade": {
+          "default": "1.1x–1.2x",
+          "values": [
+            "1.1x–1.2x",
+            "1.3x ou mais"
+          ]
+        }
+      },
+      "text": "⚡ Criativo \"atropelado\" — ritmo apertado que prende a atenção, sem respiro entre as ideias: acelerar pra {velocidade} (às vezes mais) e cortes secos entre as falas e, quando precisar, dentro da própria frase. Só cuidar pra fala continuar inteligível.",
+      "example": {
+        "tag": "criativo-atropelado-ref"
+      }
+    },
+    "formato": {
+      "secao": "edicao",
+      "obrigatorio": "formato",
+      "triggers": [
+        "formato",
+        "react",
+        "UGC",
+        "tela dividida",
+        "CXP",
+        "cinematográfico",
+        "CNM",
+        "teleprompter",
+        "TP",
+        "F TP",
+        "formato TP"
+      ],
+      "slots": {
+        "tipo": {
+          "default": "UGC",
+          "values": [
+            "UGC",
+            "React",
+            "Tela dividida",
+            "CXP",
+            "React + UGC",
+            "Cinematográfico (CNM)",
+            "Teleprompter (TP)"
+          ]
+        },
+        "genero_spokesperson": {
+          "default": "—",
+          "values": [
+            "feminino",
+            "masculino",
+            "—"
+          ],
+          "as_text": {
+            "feminino": " feminino",
+            "masculino": " masculino",
+            "—": ""
+          }
+        }
+      },
+      "text_by": {
+        "slot": "tipo",
+        "map": {
+          "UGC": "🎬 Formato UGC{genero_spokesperson} — cara de TikTok orgânico, gravado na mão, natural (nada de cara de comercial).",
+          "React": "🎬 Formato React{genero_spokesperson} — tela com o vídeo reagido + expert reagindo (geralmente no canto inferior), reação ancorada na cena.",
+          "Tela dividida": "🎬 Formato Tela dividida{genero_spokesperson} — split screen: conteúdo em cima/baixo ou lado a lado.",
+          "CXP": "🎬 Formato Caixinha de pergunta (CXP){genero_spokesperson} — responder uma caixinha nativa do Instagram; expert em pé na academia, de frente pra câmera, pra não poluir a tela.",
+          "React + UGC": "🎬 Formato React + UGC{genero_spokesperson} — gancho em react, corpo em UGC orgânico.",
+          "Cinematográfico (CNM)": "🎬 Formato Cinematográfico (CNM){genero_spokesperson} — estilo blogueira mostrando a rotina (cenas em vídeo) com a copy em narração ao fundo; visual caprichado.",
+          "Teleprompter (TP)": "🎬 Formato Teleprompter (TP){genero_spokesperson} — na prática é um UGC do próprio Murilo gravando: ele lê a copy no teleprompter, mas o vídeo TEM que ficar orgânico e dinâmico (cara de TikTok, gravado na mão, natural) — nada de leitura robótica, travada ou olhar correndo. Deixar o teleprompter colado na lente pra ele falar olhando pra câmera."
+        }
+      },
+      "example": {
+        "by_slot": "tipo",
+        "map": {
+          "UGC": "formato-ugc",
+          "React": "formato-react",
+          "Tela dividida": "formato-tela-dividida",
+          "CXP": "formato-cxp",
+          "React + UGC": "formato-react",
+          "Cinematográfico (CNM)": "formato-cinematografico",
+          "Teleprompter (TP)": "formato-teleprompter"
+        }
+      }
+    },
+    "voz-feminina-narracao": {
+      "secao": "edicao",
+      "triggers": [
+        "voz feminina",
+        "narração",
+        "narração ao fundo",
+        "voz de mulher",
+        "F CNM"
+      ],
+      "slots": {
+        "dinamica": {
+          "default": "ritmo bom, sem pausa",
+          "values": [
+            "ritmo bom, sem pausa",
+            "mais suave"
+          ]
+        }
+      },
+      "text": "🎙️ Narração em voz feminina (estilo TikTok de blogueira) — natural, {dinamica}, espelhando a entonação da referência. Áudio limpo, sem ruído.",
+      "example": {
+        "tag": "voz-feminina-ref"
+      }
+    },
+    "takes-dopaminergicos": {
+      "secao": "edicao",
+      "triggers": [
+        "dopaminérgico",
+        "takes cinematográficos",
+        "vários aparelhos",
+        "selecionar os takes"
+      ],
+      "slots": {},
+      "text": "🎞️ Edição dopaminérgica — sempre algo novo na tela pra segurar a atenção: takes variados (vários aparelhos/ângulos), a imagem muda a cada 1–2s, nada de take longo parado.",
+      "example": {
+        "tag": "dopaminergico-ref"
+      }
+    },
+    "b-roll-realista": {
+      "secao": "edicao",
+      "obrigatorio": "b-roll",
+      "triggers": [
+        "b-roll",
+        "b-rows",
+        "takes de apoio",
+        "cenas de mulher",
+        "takes do TikTok",
+        "vídeos de apoio",
+        "cenas externas"
+      ],
+      "slots": {},
+      "text": "⚠️ B-rolls (takes/cenas que não são o expert gravando): usar SOMENTE material que remeta a resultados realistas e ao cotidiano de uma mulher que treina — corpo real, treino de verdade, antes/depois críveis. NÃO usar vídeos vulgares/apelativos (ex.: perfis que postam conteúdo sensual pra atrair venda de conteúdo adulto). A vibe é \"mulher real que treina\", não \"conteúdo adulto\".\n✅ QUEREMOS (modele por estes): {video_refs}\n❌ EVITAR (não faça): {anti_refs}",
+      "example": {
+        "tag": "b-roll-realista"
+      }
+    },
+    "caixinha-de-perguntas": {
+      "secao": "edicao",
+      "triggers": [
+        "caixinha de perguntas",
+        "caixinha de pergunta",
+        "CXP"
+      ],
+      "slots": {
+        "tipo": {
+          "default": "nativa do Instagram",
+          "values": [
+            "nativa do Instagram",
+            "ilustrada"
+          ]
+        }
+      },
+      "text": "💬 Caixinha de pergunta {tipo} — visual idêntico ao sticker real do Instagram, com a pergunta do roteiro dentro. A 1ª fala lê a pergunta de forma natural e responde. Não usar legenda concorrendo com a caixinha.",
+      "example": {
+        "by_slot": "tipo",
+        "map": {
+          "nativa do Instagram": "cxp-nativa",
+          "ilustrada": "cxp-ilustrada"
+        }
+      }
+    },
+    "cenario": {
+      "secao": "gravacao",
+      "obrigatorio": "cenario",
+      "triggers": [
+        "cenário",
+        "ambiente",
+        "local de gravação",
+        "onde gravar"
+      ],
+      "slots": {
+        "status": {
+          "default": "confirmar",
+          "values": [
+            "confirmar",
+            "definido"
+          ]
+        },
+        "local": {
+          "default": "academia",
+          "values": [
+            "academia",
+            "casa (quarto/sala/garagem)",
+            "externa"
+          ]
+        }
+      },
+      "text_by": {
+        "slot": "status",
+        "map": {
+          "confirmar": "⚠️ CONFIRMAR cenário — o copywriter não especificou onde gravar. Definir antes de gravar (ex.: academia com boa luz e fundo limpo, ou casa/quintal se a copy pedir). Não gravar sem isso definido.",
+          "definido": "📍 Cenário: {local} — boa iluminação (natural ou branca), fundo limpo, sem gente passando atrás. {local=academia→Escolher um canto com aparelhos visíveis (dá contexto) sem poluir o quadro.}{local=casa (quarto/sala/garagem)→Ambiente arrumado, sem bagunça atrás.}{local=externa→Local controlado, sem movimento/gente atrás.}"
+        }
+      },
+      "example": {
+        "by_slot": "local",
+        "map": {
+          "academia": "cenario-academia",
+          "casa (quarto/sala/garagem)": "cenario-casa"
+        }
+      }
+    },
+    "microfone-lapela": {
+      "secao": "gravacao",
+      "obrigatorio": "microfone",
+      "triggers": [
+        "microfone",
+        "lapela",
+        "áudio limpo",
+        "mic na mão"
+      ],
+      "slots": {
+        "posicao": {
+          "default": "mão",
+          "values": [
+            "mão",
+            "lapela"
+          ]
+        }
+      },
+      "text_by": {
+        "slot": "posicao",
+        "map": {
+          "mão": "🎤 Áudio limpo (sem áudio bom o criativo morre): microfone na mão, perto da boca, estilo repórter/entrevista — passa autoridade no nicho fitness. Ambiente sem eco nem barulho; conferir o nível antes (sem estourar/baixo).",
+          "lapela": "🎤 Áudio limpo (sem áudio bom o criativo morre): microfone de lapela preso na roupa (~20cm da boca), sem roçar. Ambiente sem eco nem barulho; conferir o nível antes (sem estourar/baixo)."
+        }
+      },
+      "example": {
+        "by_slot": "posicao",
+        "map": {
+          "mão": "microfone-mao-ref",
+          "lapela": "microfone-lapela-ref"
+        }
+      }
+    },
+    "takes": {
+      "secao": "gravacao",
+      "obrigatorio": "takes",
+      "triggers": [
+        "takes",
+        "como gravar os takes",
+        "gravar em vários aparelhos",
+        "selecionar takes",
+        "opções de corte"
+      ],
+      "slots": {
+        "variedade": {
+          "default": "vários aparelhos/ângulos",
+          "values": [
+            "vários aparelhos/ângulos",
+            "take único de frente"
+          ]
+        }
+      },
+      "text_by": {
+        "slot": "variedade",
+        "map": {
+          "vários aparelhos/ângulos": "🎥 Takes pra dar opção de corte ao editor: gravar a copy inteira passando por vários aparelhos e ângulos (frontal, lateral, leve de baixo); nada de take longo parado. Imagem estável, sem tremer.",
+          "take único de frente": "🎥 Takes: um take frontal limpo, na altura dos olhos. Imagem estável, sem tremer."
+        }
+      },
+      "example": {
+        "tag": "angulos-camera-ref"
+      }
+    },
+    "figurino-regata": {
+      "secao": "gravacao",
+      "triggers": [
+        "camisa regata",
+        "regata",
+        "machão"
+      ],
+      "slots": {
+        "cor": {
+          "default": "preta",
+          "values": [
+            "preta",
+            "branca",
+            "cinza"
+          ]
+        },
+        "caimento": {
+          "default": "justa",
+          "values": [
+            "justa",
+            "normal"
+          ]
+        }
+      },
+      "text": "👕 Figurino pra passar físico forte + autoridade: regata {cor}, {caimento}, valorizando shape e ombros/braços. Sem estampas chamativas que disputem com o rosto/fala.",
+      "example": {
+        "by_slot": "cor",
+        "map": {
+          "preta": "figurino-regata-preta",
+          "branca": "figurino-regata-branca",
+          "cinza": "figurino-regata-cinza"
+        }
+      }
+    },
+    "figurino-roupa-treino": {
+      "secao": "gravacao",
+      "triggers": [
+        "roupa de treino",
+        "look academia",
+        "roupa que valorize o shape"
+      ],
+      "slots": {
+        "peca": {
+          "default": "conjunto fitness",
+          "values": [
+            "conjunto fitness",
+            "top + legging",
+            "macaquinho"
+          ]
+        },
+        "cor": {
+          "default": "neutra",
+          "values": [
+            "neutra"
+          ]
+        }
+      },
+      "text": "👕 Figurino de quem treina de verdade (não propaganda): {peca} {cor} valorizando o shape (glúteo/pernas em evidência, sem vulgaridade). Tecido sem transparência, caimento firme.",
+      "example": {
+        "tag": "figurino-treino-fem"
+      }
+    },
+    "angulos-camera": {
+      "secao": "gravacao",
+      "triggers": [
+        "ângulos",
+        "múltiplos ângulos",
+        "câmera acompanha",
+        "de baixo pra cima",
+        "frontal e lateral"
+      ],
+      "slots": {
+        "variedade": {
+          "default": "múltiplos",
+          "values": [
+            "múltiplos",
+            "frontal fixo"
+          ]
+        }
+      },
+      "text_by": {
+        "slot": "variedade",
+        "map": {
+          "múltiplos": "🎥 Câmera com múltiplos ângulos pra dar opção de corte: alternar frontal, lateral e leve de baixo (contra-plongée sem exagero); mesma fala em 2–3 ângulos. Acompanhar o movimento (troca de aparelho). Imagem estável.",
+          "frontal fixo": "🎥 Câmera frontal fixa na altura dos olhos. Imagem estável."
+        }
+      },
+      "example": {
+        "tag": "angulos-camera-ref"
+      }
+    },
+    "enquadramento": {
+      "secao": "gravacao",
+      "triggers": [
+        "enquadramento",
+        "altura da câmera",
+        "como se olhasse de frente"
+      ],
+      "slots": {
+        "altura": {
+          "default": "altura dos olhos",
+          "values": [
+            "altura dos olhos",
+            "leve de baixo pra cima"
+          ]
+        },
+        "plano": {
+          "default": "meio-corpo",
+          "values": [
+            "meio-corpo",
+            "corpo inteiro",
+            "close"
+          ]
+        }
+      },
+      "text": "🖼️ Enquadramento pra criar conexão com quem assiste: câmera na {altura}, plano {plano}, expert olhando direto pra câmera. Espaço de cabeça correto (não cortar testa nem sobrar céu). Vertical 9:16.",
+      "example": {
+        "tag": "enquadramento-ref"
+      }
+    },
+    "tom": {
+      "secao": "gravacao",
+      "triggers": [
+        "tom",
+        "tom de conversa",
+        "naturalidade",
+        "leveza e autoridade",
+        "comunicação não-verbal"
+      ],
+      "slots": {
+        "registro": {
+          "default": "conversa natural (leveza + autoridade)",
+          "values": [
+            "conversa natural (leveza + autoridade)",
+            "mais enérgico",
+            "mais sério"
+          ]
+        }
+      },
+      "text": "🎭 Tom {registro} — falar como quem conta algo pra um amigo, sem pose de propaganda. Expressão viva, gesto natural nos pontos de ênfase, olhar na câmera. Ênfase nas palavras-chave, curto e direto.",
+      "example": {
+        "tag": "tom-ref"
+      }
+    },
+    "lip-sync": {
+      "secao": "gravacao",
+      "triggers": [
+        "lip sync",
+        "lipsync",
+        "dublagem",
+        "áudio gravado depois",
+        "narração"
+      ],
+      "slots": {
+        "tipo": {
+          "default": "lip sync",
+          "values": [
+            "lip sync",
+            "só narração"
+          ]
+        }
+      },
+      "text_by": {
+        "slot": "tipo",
+        "map": {
+          "lip sync": "🗣️ Lip sync com voz natural (não pode soar robótica): voz gerada depois e sincronizada com a boca; foco em entonação humana, emoção e ritmo, espelhando o tom das referências.",
+          "só narração": "🗣️ Narração (voz over) sobre takes de apoio, sem mostrar a boca falando; voz natural, sem soar robótica, espelhando o tom das referências."
+        }
+      },
+      "example": {
+        "tag": "lip-sync-ref"
+      }
+    },
+    "direcao-do-hook": {
+      "secao": "gravacao",
+      "triggers": [
+        "direção do hook",
+        "como falar o hook",
+        "pergunta real",
+        "pausa e solta"
+      ],
+      "slots": {},
+      "text": "🎯 Direção do hook — a primeira fala tem que soar real, não locução: falar com a intenção certa, respeitando as pausas marcadas no roteiro.",
+      "example": {}
+    }
+  }
+}

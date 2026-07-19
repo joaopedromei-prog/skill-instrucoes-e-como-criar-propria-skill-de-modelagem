@@ -1,0 +1,317 @@
+{
+  "_schema": {
+    "tag": "identificador usado nos glossários (campo Exemplo)",
+    "descricao": "o que o exemplo mostra",
+    "images": "lista de nomes de arquivo em examples/img/ (prints estáticos)",
+    "image_urls": "URLs públicas no Drive, na mesma ordem de 'images' (preenchido por upload_examples.py)",
+    "video_refs": "lista de links de vídeo de referência (TikTok/IG/Drive) — usados como link no doc, não inseridos como imagem",
+    "anti_refs": "lista de links do que EVITAR (exemplos negativos), usados em ressalvas como a de B-roll"
+  },
+  "examples": [
+    {
+      "tag": "headline-invideo-letra-branca",
+      "descricao": "Headline invídeo: letra branca, borda preta, sem fundo",
+      "images": [
+        "headline-invideo-letrabranca-bordadaletrapreta.png"
+      ],
+      "image_urls": [
+        "https://drive.google.com/uc?id=1hI-Ef9Rg8Hn0xMucEgAS4tlaMjjiJDLP"
+      ],
+      "video_refs": []
+    },
+    {
+      "tag": "headline-invideo-fundo-branco",
+      "descricao": "Headline invídeo: fundo branco, letra preta",
+      "images": [
+        "headline-invideo-fundobranco-letrapreta.png"
+      ],
+      "image_urls": [
+        "https://drive.google.com/uc?id=10VPhLwK60aHH8JyQibASU8cmFReZW5mh"
+      ],
+      "video_refs": []
+    },
+    {
+      "tag": "headline-invideo-fundo-vermelho",
+      "descricao": "Headline invídeo de choque: fundo vermelho, letra branca",
+      "images": [
+        "headline-invideo-fundovermelho-letrabranca.png"
+      ],
+      "image_urls": [
+        "https://drive.google.com/uc?id=1bSYWHwe79zDKsOyDvxadZvlBbVt98L7w"
+      ],
+      "video_refs": []
+    },
+    {
+      "tag": "legenda-min-branca",
+      "descricao": "Legenda minimalista branca, borda preta, sem caixa, centro-baixo",
+      "images": [
+        "legenda-min-branca.png",
+        "legenda-min-branca-2.png",
+        "legenda-min-branca-3.png"
+      ],
+      "image_urls": [
+        "https://drive.google.com/uc?id=1rNR2s2zvdcppWTVk2vV08yuxzBAY4TcF",
+        "https://drive.google.com/uc?id=1M5Qe8D6uXFlh_DXscEg61tWGbSjaffyH",
+        "https://drive.google.com/uc?id=1OnvHHn1G5zyTFBqvOVqr6LcVevO2FgSI"
+      ],
+      "video_refs": []
+    },
+    {
+      "tag": "leia-legenda-preta",
+      "descricao": "Card 'Leia a legenda' letra preta fundo branco",
+      "images": [],
+      "image_urls": [],
+      "video_refs": []
+    },
+    {
+      "tag": "leia-legenda-branca",
+      "descricao": "Card 'Leia a legenda' letra branca fundo preto",
+      "images": [],
+      "image_urls": [],
+      "video_refs": []
+    },
+    {
+      "tag": "legenda-interativa-tipografia",
+      "descricao": "Legenda interativa/tipográfica: tamanhos, fontes, cores e posições variadas na tela",
+      "images": [],
+      "image_urls": [],
+      "video_refs": [
+        "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=BR&is_targeted_country=false&media_type=all&search_type=page&sort_data[direction]=desc&sort_data[mode]=total_impressions&view_all_page_id=277332599356492"
+      ]
+    },
+    {
+      "tag": "formato-cinematografico",
+      "descricao": "Formato CNM: cinematográfico estilo blogueira + narração ao fundo",
+      "images": [],
+      "image_urls": [],
+      "video_refs": [
+        "https://drive.google.com/file/d/1orTf8eMOuOaGTAQcORPyVn3pjE3seIUe/view",
+        "https://drive.google.com/file/d/1QRMXMsVUdPomdikYAf8SzNxOdgJ-2PQi/view",
+        "https://drive.google.com/file/d/16oI1I9yucu39A1qA-v2onAIDcIEYLnsH/view",
+        "https://drive.google.com/file/d/1SMHykNFTi1S64OL2-sXpQP79Xgl02b8z/view"
+      ],
+      "ref_label": "repare no clima de blogueira + narração ao fundo"
+    },
+    {
+      "tag": "formato-react",
+      "descricao": "Formato React: expert reagindo (geralmente no canto inferior)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": [
+        "https://drive.google.com/file/d/1whTNWCyO9Ikv5_xrHO7Z9fi16sFucQeP/view?usp=sharing",
+        "https://drive.google.com/file/d/1npaTrFrFYe_AxaYq85DRcHiYIJFE14_7/view?usp=drive_link",
+        "https://drive.google.com/file/d/1ARtWYCiH8oOCcMrngfhC42jZLRHDFUkF/view?usp=drive_link"
+      ],
+      "ref_label": "repare em como a reação ancora na cena reagida"
+    },
+    {
+      "tag": "formato-cxp",
+      "descricao": "Formato caixinha de pergunta, expert em pé na academia",
+      "images": [],
+      "image_urls": [],
+      "video_refs": [
+        "https://drive.google.com/file/d/1ewguzIWCIkHqx9xrT1_r8Aj7COeeDy7K/view?usp=drive_link",
+        "https://drive.google.com/file/d/1supOWOgFvGwjl8A9CEFeLmLHYjJInGOy/view?usp=drive_link",
+        "https://drive.google.com/file/d/110OwACWu_zBoPQMBQezP4az9XgMRHnTz/view?usp=drive_link"
+      ],
+      "ref_label": "repare na caixinha em cima e no expert em pé na academia"
+    },
+    {
+      "tag": "cxp-nativa",
+      "descricao": "Caixinha de pergunta nativa do Instagram (mesmos refs do formato-cxp)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": [
+        "https://drive.google.com/file/d/1ewguzIWCIkHqx9xrT1_r8Aj7COeeDy7K/view?usp=drive_link",
+        "https://drive.google.com/file/d/1supOWOgFvGwjl8A9CEFeLmLHYjJInGOy/view?usp=drive_link",
+        "https://drive.google.com/file/d/110OwACWu_zBoPQMBQezP4az9XgMRHnTz/view?usp=drive_link"
+      ]
+    },
+    {
+      "tag": "formato-tela-dividida",
+      "descricao": "Split screen (sem exemplo ainda)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": []
+    },
+    {
+      "tag": "formato-ugc",
+      "descricao": "UGC orgânico (sem exemplo ainda)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": []
+    },
+    {
+      "tag": "formato-teleprompter",
+      "descricao": "Formato Teleprompter (TP): UGC do Murilo lendo no teleprompter, mas com cara orgânica/dinâmica de TikTok (sem exemplo ainda)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": []
+    },
+    {
+      "tag": "criativo-atropelado-ref",
+      "descricao": "Criativo atropelado: vídeo acelerado 1.1-1.2x+ e cortes secos entre/dentro das falas",
+      "images": [],
+      "image_urls": [],
+      "video_refs": [
+        "https://drive.google.com/file/d/1KO4f28F_sLNnD4Hmc-KD9z2lyYGpdqbO/view?usp=sharing",
+        "https://drive.google.com/file/d/1dWRuGegSKhC4ZSM9GyHCGt1CFNqMqlyC/view?usp=sharing",
+        "https://drive.google.com/file/d/1MAUEET52j7c0bwpsiOsO2j56hkxuGgUG/view?usp=drive_link"
+      ],
+      "ref_label": "repare na aceleração e nos cortes dentro da própria fala"
+    },
+    {
+      "tag": "voz-feminina-ref",
+      "descricao": "Narração em voz feminina estilo TikTok de blogueira",
+      "images": [],
+      "image_urls": [],
+      "video_refs": [
+        "https://drive.google.com/file/d/1ARtWYCiH8oOCcMrngfhC42jZLRHDFUkF/view?usp=drive_link",
+        "https://drive.google.com/file/d/1dF9kSee-_Apb03FBbXAzh7KY1VlBme-v/view?usp=drive_link",
+        "https://drive.google.com/file/d/1KGSwVOo35cXSIAY_DeIrDWtbXH2_YP0y/view?usp=sharing",
+        "https://drive.google.com/file/d/1Ntft_oOCviJRqp8OTCRoi-llqRfhdl9t/view?usp=sharing"
+      ],
+      "ref_label": "repare na entonação natural de blogueira"
+    },
+    {
+      "tag": "dopaminergico-ref",
+      "descricao": "Edição dopaminérgica: takes variados trocando rápido",
+      "images": [],
+      "image_urls": [],
+      "video_refs": [
+        "https://drive.google.com/file/d/1VMhHDr3RR2J_ZvdoptqfS3xBELZ1mhhu/view?usp=sharing",
+        "https://drive.google.com/file/d/1MAUEET52j7c0bwpsiOsO2j56hkxuGgUG/view?usp=drive_link"
+      ],
+      "ref_label": "repare na troca rápida de takes (algo novo o tempo todo)"
+    },
+    {
+      "tag": "corte-seco-ref",
+      "descricao": "Cortes secos entre falas (e dentro da frase)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": [
+        "https://drive.google.com/file/d/1VMhHDr3RR2J_ZvdoptqfS3xBELZ1mhhu/view?usp=sharing",
+        "https://drive.google.com/file/d/1MAUEET52j7c0bwpsiOsO2j56hkxuGgUG/view?usp=drive_link",
+        "https://drive.google.com/file/d/1Wy9fXqkvWZig110eJio2sx3Y_-lAby7A/view?usp=drive_link"
+      ],
+      "ref_label": "repare nos cortes secos, sem transição"
+    },
+    {
+      "tag": "ritmo-viral-ref",
+      "descricao": "Ritmo TikTok viral / velocidade e ritmo atropelado — referência de como deve ficar a aceleração e os cortes.",
+      "images": [],
+      "image_urls": [],
+      "video_refs": [
+        "https://drive.google.com/file/d/1KO4f28F_sLNnD4Hmc-KD9z2lyYGpdqbO/view?usp=sharing",
+        "https://drive.google.com/file/d/1dWRuGegSKhC4ZSM9GyHCGt1CFNqMqlyC/view?usp=sharing",
+        "https://drive.google.com/file/d/1MAUEET52j7c0bwpsiOsO2j56hkxuGgUG/view?usp=drive_link"
+      ],
+      "ref_label": "repare na velocidade e nos cortes secos emendando as falas"
+    },
+    {
+      "tag": "b-roll-realista",
+      "descricao": "B-roll permitido: resultados realistas e cotidiano de uma mulher que treina (corpo real). NÃO usar vídeos vulgares/apelativos (perfis de conteúdo adulto).",
+      "images": [],
+      "image_urls": [],
+      "video_refs": [
+        "https://drive.google.com/file/d/1KGSwVOo35cXSIAY_DeIrDWtbXH2_YP0y/view?usp=drive_link",
+        "https://drive.google.com/file/d/1MAUEET52j7c0bwpsiOsO2j56hkxuGgUG/view?usp=drive_link",
+        "https://drive.google.com/file/d/1ARtWYCiH8oOCcMrngfhC42jZLRHDFUkF/view?usp=sharing"
+      ],
+      "anti_refs": [
+        "https://vt.tiktok.com/ZSCRDbS8f/",
+        "https://vt.tiktok.com/ZSCRUhX5n/"
+      ],
+      "ref_label": "material realista de mulher que treina (nunca vulgar)"
+    },
+    {
+      "tag": "lip-sync-ref",
+      "descricao": "Lip sync correto / narração sem mostrar boca",
+      "images": [],
+      "image_urls": [],
+      "video_refs": [
+        "https://drive.google.com/file/d/1dF9kSee-_Apb03FBbXAzh7KY1VlBme-v/view?usp=drive_link",
+        "https://drive.google.com/file/d/1ARtWYCiH8oOCcMrngfhC42jZLRHDFUkF/view?usp=drive_link",
+        "https://drive.google.com/file/d/11y_ugikSvkixdIkfLtZGL8Tiblh9bp6r/view?usp=sharing"
+      ],
+      "ref_label": "repare na naturalidade da voz (não robótica)"
+    },
+    {
+      "tag": "figurino-regata-preta",
+      "descricao": "Murilo de regata preta (sem print por opção)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": []
+    },
+    {
+      "tag": "figurino-regata-branca",
+      "descricao": "Murilo de regata branca (sem print por opção)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": []
+    },
+    {
+      "tag": "figurino-regata-cinza",
+      "descricao": "Murilo de regata cinza (sem print por opção)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": []
+    },
+    {
+      "tag": "figurino-treino-fem",
+      "descricao": "Spokesperson feminina em conjunto fitness (sem print por opção)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": []
+    },
+    {
+      "tag": "cenario-academia",
+      "descricao": "Cenário academia (sem ref ainda)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": []
+    },
+    {
+      "tag": "cenario-casa",
+      "descricao": "Cenário casa (sem ref ainda)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": []
+    },
+    {
+      "tag": "angulos-camera-ref",
+      "descricao": "Múltiplos ângulos (sem ref por opção)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": []
+    },
+    {
+      "tag": "enquadramento-ref",
+      "descricao": "Enquadramento meio-corpo 9:16 (sem ref ainda)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": []
+    },
+    {
+      "tag": "tom-ref",
+      "descricao": "Tom conversa natural (sem ref por opção)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": []
+    },
+    {
+      "tag": "microfone-mao-ref",
+      "descricao": "Microfone na mão estilo entrevista (sem print por opção)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": []
+    },
+    {
+      "tag": "microfone-lapela-ref",
+      "descricao": "Posição da lapela (sem print por opção)",
+      "images": [],
+      "image_urls": [],
+      "video_refs": []
+    }
+  ]
+}

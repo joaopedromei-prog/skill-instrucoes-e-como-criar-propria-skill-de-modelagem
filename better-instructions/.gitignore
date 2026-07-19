@@ -1,0 +1,12 @@
+# segredos OAuth — NUNCA versionar
+scripts/token.json
+scripts/credentials.json
+
+# ambiente / caches
+scripts/.venv/
+**/__pycache__/
+*.pyc
+.DS_Store
+
+# logs de execução (conteúdo de docs, ruidoso)
+scripts/revert_log.jsonl
