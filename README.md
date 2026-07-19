@@ -2,11 +2,14 @@
 
 Dois entregáveis num repositório só:
 
-1. **[`COMO-CRIAR-UMA-SKILL.md`](COMO-CRIAR-UMA-SKILL.md)** — um guia detalhado, para um terceiro
-   (humano **ou** IA), de como criar uma skill de modelagem tão boa quanto a `criativos-bumbumflix`.
-   É engenharia reversa dos princípios de design de uma skill real em produção: divulgação progressiva,
-   `description` como classificador de disparo, fonte única da verdade, determinismo por script,
-   checklist negativo anti-IA, feedback do dono codificado como regra, fallbacks. Leia isto primeiro.
+1. **[`COMO-CRIAR-UMA-SKILL.md`](COMO-CRIAR-UMA-SKILL.md)** — um guia detalhado, para um copywriter
+   (humano **ou** IA), de **como criar a sua própria skill de criativos do jeito que a
+   `criativos-bumbumflix` foi criada** — com a SUA oferta, o SEU expert e a SUA voz. Não é teoria de
+   skill genérica: é a engenharia reversa, arquivo por arquivo e passo por passo, da skill real em
+   produção — `oferta.md` (ficha factual anti-alucinação), `dna-estilo.md` (voz virada regra +
+   checklist negativo anti-IA), `blocos.md` (taxonomia de hooks + esqueletos de body), o corpus como
+   calibrador, o `SKILL.md` como cérebro-orquestrador, e o determinismo empurrado pra scripts. No fim,
+   um agente lendo a skill escreve criativos indistinguíveis dos que você escreve à mão. Leia primeiro.
 
 2. **[`better-instructions/`](better-instructions/)** — a skill que **faz as instruções de gravação e
    edição** dos criativos (a engine que a `criativos-bumbumflix` chama no seu Passo 7). Está aqui
